@@ -1,3 +1,32 @@
-.bids {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
 }
+table {
+    border-style: solid;
+}
+
+.ask-price {
+    color: #FF3B69;
+}
+.bid-price {
+    color: #02BA55;
+}
+.table {
+    overflow-x:auto;
+}
+td {
+    border: 1px solid black;
+    max-height: 20px;
+    text-align: left;
+  }
+* {
+    background-color: #111722;
+    color: rgb(228, 228, 228);
+}
+th {
+    text-align: left;
+}
+.table-container {
+margin: 100px;
+  }

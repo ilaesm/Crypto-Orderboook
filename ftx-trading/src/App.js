@@ -1,40 +1,52 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "./fetch-data";
+import './App.css'
 
-function App() {
-  // init with an object with empty `asks` array
-  const [orders, setOrders] = useState({ asks: [], bids: [] });
+
+function App(props) {
+  const url = "https://api.gemini.com/v1/book/btcusd";
+
+  const [orders, setOrders] = useState({ asks: [{price: 0, amount: 0}], bids: [{price: 0, amount: 0}] });
+
+  const fetchData = () => {
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data); //Data: {bids: Array(50), asks: Array(50)}
+        setOrders(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
-    fetchData().then(setOrders).catch(console.error);
+    fetchData();
   }, []);
-
   return (
-    <>
-    <div className="asks">
-      {/* Map over the data */}
-      {orders.asks.map(({ price, amount }, i) => (
-        <dl key={i}>
-          <p className='price'>Asking Price (USD)</p>
-          <dd>{price}</dd>
-          <dt>Amount</dt>
-          <dd>{amount}</dd>
-        </dl>
-      ))}
+    <div class="table-container">
+      <table className="table">
+        <thead>
+          <th>Ask price</th>
+          <th>Ask amount</th>
+          <th>Bid price</th>
+          <th>Bid amount</th>
+        </thead>
+      {orders.asks?.map((e, i) => {
+        return (
+          <>
+            <tr>
+              <td className='ask-price'>${e.price.toLocaleString()}</td>
+              <td className='td'>{e.amount}</td>
+              <td className='bid-price'>${orders.bids[i].price.toLocaleString()}</td>
+              <td className='td'>{orders.bids[i].amount}</td>
+            </tr>
+          </>
+        )
+      })}
+      </table>
     </div>
-    <div className='bids'>
-      {/* Map over the data */}
-      {orders.bids.map(({ price, amount }, i) => (
-        <dl key={i}>
-          <p className='price'>Bid Price (USD)</p>
-          <dd>{price}</dd>
-          <dt>Amount</dt>
-          <dd>{amount}</dd>
-        </dl>
-      ))}
-    </div>
-
-</>
   );
 }
 
