@@ -1,24 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body {
     font-family: 'Roboto', sans-serif;
 }
 table {
-    border-style: solid;
+    max-height: 484px;
+    display: block;
+    margin: 0px auto;
 }
 
 .ask-price {
     color: #FF3B69;
+
 }
 .bid-price {
     color: #02BA55;
 }
 .table {
-    overflow-x:auto;
+    border-collapse: collapse;
+    overflow: scroll;
 }
+    
 td {
-    border: 1px solid black;
-    max-height: 20px;
+    border: 0.5px solid black;
+    padding: 10px;
     text-align: left;
+    font-size: 15px;
+   
   }
 * {
     background-color: #111722;
@@ -26,7 +33,17 @@ td {
 }
 th {
     text-align: left;
+    padding: 10px;
+    background-color: #111722;
+    font-weight: 700;
+    font-size: 17px;
 }
-.table-container {
-margin: 100px;
-  }
+
+
+
+.table.sticky th {
+position: sticky;
+top: 0;
+border: 0.5px solid black;
+border-bottom: 2.5px solid black;
+}

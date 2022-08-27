@@ -26,7 +26,7 @@ function App(props) {
   }, []);
   return (
     <div class="table-container">
-      <table className="table">
+      <table className="table sticky">
         <thead>
           <th>Ask price</th>
           <th>Ask amount</th>
@@ -42,6 +42,7 @@ function App(props) {
               <td className='bid-price'>${orders.bids[i].price.toLocaleString()}</td>
               <td className='td'>{orders.bids[i].amount}</td>
             </tr>
+
           </>
         )
       })}
