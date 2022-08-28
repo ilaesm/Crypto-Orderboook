@@ -6,6 +6,8 @@ table {
     max-height: 484px;
     display: block;
     margin: 0px auto;
+    margin-left: 70%;
+    margin-top: 10%;
 }
 
 .ask-price {
@@ -18,6 +20,7 @@ table {
 .table {
     border-collapse: collapse;
     overflow: scroll;
+    
 }
     
 td {
@@ -28,7 +31,7 @@ td {
    
   }
 * {
-    background-color: #111722;
+    background-color: #0e121a;
     color: rgb(228, 228, 228);
 }
 th {
@@ -46,4 +49,10 @@ position: sticky;
 top: 0;
 border: 0.5px solid black;
 border-bottom: 2.5px solid black;
+}
+.ask-price:hover {
+    background-color: rgba(72, 37, 51, 1);
+}
+.bid-price:hover {
+    background-color: rgba(36, 66, 57, 1);
 }

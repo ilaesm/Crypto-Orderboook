@@ -6,7 +6,6 @@ function App(props) {
   const url = "https://api.gemini.com/v1/book/btcusd";
 
   const [orders, setOrders] = useState({ asks: [{price: 0, amount: 0}], bids: [{price: 0, amount: 0}] });
-
   const fetchData = () => {
     fetch(url)
       .then((response) => {
@@ -21,9 +20,13 @@ function App(props) {
       });
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  useEffect(()=>{
+    fetchData()
+//     // const interval=setInterval(()=>{
+//     //   fetchData()
+//     //  },2000)
+//     //  return()=>clearInterval(interval)
+},[])
   return (
     <div class="table-container">
       <table className="table sticky">
@@ -47,6 +50,7 @@ function App(props) {
         )
       })}
       </table>
+      
     </div>
   );
 }
