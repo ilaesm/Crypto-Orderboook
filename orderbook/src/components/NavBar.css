@@ -1,0 +1,11 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid rgb(21, 34, 49);
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 2rem;
+}
