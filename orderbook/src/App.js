@@ -22,10 +22,10 @@ function App(props) {
 
   useEffect(()=>{
     fetchData()
-    const interval=setInterval(()=>{
-      fetchData()
-     },6000)
-     return()=>clearInterval(interval)
+    // const interval=setInterval(()=>{
+    //   fetchData()
+    //  },6000)
+    //  return()=>clearInterval(interval)
 },[])
   return (
     <div class="table-container">
