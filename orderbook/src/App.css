@@ -4,10 +4,10 @@ body {
 }
 table {
     max-height: 484px;
-    max-width: 100%;
+    max-width: auto;
     display: inline-block;
     margin: 0px auto;
-    margin-left: 35.5%;
+    margin-left: 100;
     margin-top: 3%;
     border: 3px solid rgb(21, 34, 49);
 }

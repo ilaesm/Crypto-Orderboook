@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import './App.css'
+import Graph from "./components/Graph";
 
 
 function App(props) {
@@ -22,14 +23,15 @@ function App(props) {
 
   useEffect(()=>{
     fetchData()
-    // const interval=setInterval(()=>{
-    //   fetchData()
-    //  },6000)
-    //  return()=>clearInterval(interval)
+    //refreshes data every 2 seconds
+//     const interval=setInterval(()=>{
+//       fetchData()
+//      },2000)
+//      return()=>clearInterval(interval)
 },[])
   return (
     <div class="table-container">
-      <h3 className='info'>New orders every 3 seconds</h3>
+      <h3 className='info'>Uncomment line 26-30 in App.js to refresh orders every 2 seconds</h3>
       <table className="table sticky">
         <thead>
           <th>Ask price</th>
@@ -51,7 +53,7 @@ function App(props) {
         )
       })}
       </table>
-      
+      <Graph />
     </div>
   );
 }
